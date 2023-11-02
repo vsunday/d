@@ -1,12 +1,21 @@
 version: "3.9"
 services:
   node:
-    image: d_node
+    environment:
+      NODE_PATH: "/tmp/node_modules"
+      SAM_CLI_TELEMETRY: 0
+    image: d_n
+    # image: d_n_spo
     volumes:
       - type: bind
-        source: "./${FOLDER}"
+        source: "${FOLDER}"
         target: /app
+      - type: bind
+        source: "${HOME}/Downloads/aws/my_dev"
+        target: /root/.aws
+        read_only: true
     tty: true
     entrypoint: /bin/bash
     ports:
-      - "3000:3000"
+      - "3000-3100:3000-3100"
+      - "8000-8100:8000-8100"

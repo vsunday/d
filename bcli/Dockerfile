@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:20-alpine
 
 ENV ENV="/root/.profile"
 RUN apk add git && git clone https://github.com/box/boxcli.git &&\
