@@ -4,6 +4,7 @@ services:
     environment:
       NODE_PATH: "/tmp/node_modules"
       SAM_CLI_TELEMETRY: 0
+      SST_TELEMETRY_DISABLED: 1
     image: d_n
     # image: d_n_spo
     volumes:
@@ -11,11 +12,14 @@ services:
         source: "${FOLDER}"
         target: /app
       - type: bind
-        source: "${HOME}/Downloads/aws/my_dev"
+        source: "$HOME/Downloads"
+        target: /data
+      - type: bind
+        source: "${HOME}/.aws"
         target: /root/.aws
         read_only: true
     tty: true
     entrypoint: /bin/bash
     ports:
-      - "3000-3100:3000-3100"
-      - "8000-8100:8000-8100"
+      - "3000:3000"
+      - "5555:5555"
