@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   node:
     image: d_p
@@ -10,7 +9,7 @@ services:
         source: "${HOME}/Downloads"
         target: /data
       - type: bind
-        source: "${HOME}/Downloads/aws/my_dev"
+        source: "${HOME}/.aws"
         target: /root/.aws
         read_only: true
     tty: true
