@@ -1,0 +1,18 @@
+services:
+  node:
+    image: d_java
+    volumes:
+      - type: bind
+        source: "${FOLDER}"
+        target: /app
+      - type: bind
+        source: "${HOME}/Downloads"
+        target: /data
+      - type: bind
+        source: "${HOME}/.aws"
+        target: /root/.aws
+        read_only: true
+    tty: true
+    entrypoint: /bin/bash
+    #ports:
+    #  - "3000:3000"
