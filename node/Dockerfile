@@ -1,4 +1,4 @@
-FROM node:20-buster
+FROM node:22-bullseye
 
 # basic setup
 RUN apt-get update -y && apt-get upgrade -y &&\

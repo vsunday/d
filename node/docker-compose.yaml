@@ -4,7 +4,7 @@ services:
       NODE_PATH: "/tmp/node_modules"
       SAM_CLI_TELEMETRY: 0
       SST_TELEMETRY_DISABLED: 1
-    image: d_n
+    image: d_n:22
     # image: d_n_spo
     volumes:
       - type: bind
