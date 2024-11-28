@@ -1,6 +1,7 @@
 services:
-  node:
+  app:
     image: d_p
+    # image: mcr.microsoft.com/vscode/devcontainers/python:dev-3.12
     volumes:
       - type: bind
         source: "${FOLDER}"
@@ -12,6 +13,12 @@ services:
       #  source: "${HOME}/.aws"
       #  target: /root/.aws
       #  read_only: true
+      - type: bind
+        source: ./volume/vscode-server
+        target: /root/.vscode-server
+      - type: bind
+        source: ./volume/amazonq
+        target: /root/.aws/amazonq
     tty: true
     entrypoint: /bin/bash
     ports:
