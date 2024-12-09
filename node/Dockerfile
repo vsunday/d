@@ -8,6 +8,7 @@ RUN apt-get update -y && apt-get upgrade -y &&\
   echo 'export LC_ALL="C.UTF-8"' >> /root/.bashrc &&\
   npm i -g pnpm &&\
   # see https://github.com/pnpm/pnpm/issues/5803
-  pnpm config set store-dir /home/node/.local/share/pnpm/store
+  pnpm config set store-dir /home/node/.local/share/pnpm/store &&\
+  SHELL=bash pnpm setup && . /root/.bashrc && pnpm i -g vercel
 
 ENTRYPOINT ["/bin/bash"]
