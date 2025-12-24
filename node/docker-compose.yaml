@@ -4,8 +4,8 @@ services:
       NODE_PATH: "/tmp/node_modules"
       SAM_CLI_TELEMETRY: 0
       SST_TELEMETRY_DISABLED: 1
+      CLAUDE_CONFIG_DIR: /root/.claude
     image: d_n:22
-    # image: d_n_spo
     volumes:
       - type: bind
         source: "${FOLDER}"
@@ -13,12 +13,18 @@ services:
       - type: bind
         source: "$HOME/Downloads"
         target: /data
+      # - type: bind
+      #   source: "${HOME}/.aws"
+      #   target: /root/.aws
+      #   read_only: true
       - type: bind
-        source: "${HOME}/.aws"
-        target: /root/.aws
-        read_only: true
+        source: ./volume/vscode-server
+        target: /root/.vscode-server
+      - type: bind
+        source: ./volume/claude
+        target: /root/.claude
     tty: true
     entrypoint: /bin/bash
-    ports:
-      - "3000:3000"
-      - "5555:5555"
+    #ports:
+      #- "3000:3000"
+      #- "5555:5555"
