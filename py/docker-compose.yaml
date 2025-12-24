@@ -1,7 +1,8 @@
 services:
   app:
     image: d_p
-    # image: mcr.microsoft.com/vscode/devcontainers/python:dev-3.12
+    environment:
+      CLAUDE_CONFIG_DIR: /root/.claude
     volumes:
       - type: bind
         source: "${FOLDER}"
@@ -17,10 +18,10 @@ services:
         source: ./volume/vscode-server
         target: /root/.vscode-server
       - type: bind
-        source: ./volume/amazonq
-        target: /root/.aws/amazonq
+        source: ./volume/.claude
+        target: /root/.claude
     tty: true
     entrypoint: /bin/bash
-    ports:
-      - "3000"
-      - "57890"
+    #ports:
+    #  - "3500"
+    #  - "57890"
