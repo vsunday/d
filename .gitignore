@@ -1,2 +1,6 @@
-.env
-volume
+.env*
+.DS_Store
+.claude
+amazonq
+vscode-server
+.serena
