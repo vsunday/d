@@ -16,6 +16,7 @@ services:
       start_period: 30s
 
   cipher:
+    image: cipher-cipher:latest
     build:
       context: .
       dockerfile: Dockerfile

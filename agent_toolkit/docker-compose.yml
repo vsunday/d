@@ -1,0 +1,4 @@
+include:
+  - ./cipher/docker-compose.yml
+  - ./context7/docker-compose.yml
+  - ./serena/docker-compose.yml
