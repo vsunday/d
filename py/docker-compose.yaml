@@ -1,6 +1,6 @@
 services:
   app:
-    image: d_p
+    image: d_p:latest
     environment:
       CLAUDE_CONFIG_DIR: /root/.claude
     volumes:
@@ -20,6 +20,7 @@ services:
       - type: bind
         source: ./volume/.claude
         target: /root/.claude
+      - /var/run/docker.sock:/var/run/docker.sock
     tty: true
     entrypoint: /bin/bash
     #ports:

@@ -1,11 +1,11 @@
 services:
-  node:
+  app:
+    image: d_n:24
     environment:
       NODE_PATH: "/tmp/node_modules"
       SAM_CLI_TELEMETRY: 0
       SST_TELEMETRY_DISABLED: 1
       CLAUDE_CONFIG_DIR: /root/.claude
-    image: d_n:22
     volumes:
       - type: bind
         source: "${FOLDER}"
@@ -21,8 +21,9 @@ services:
         source: ./volume/vscode-server
         target: /root/.vscode-server
       - type: bind
-        source: ./volume/claude
+        source: ./volume/.claude
         target: /root/.claude
+      - /var/run/docker.sock:/var/run/docker.sock
     tty: true
     entrypoint: /bin/bash
     #ports:
