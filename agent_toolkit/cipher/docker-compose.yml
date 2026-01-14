@@ -24,7 +24,7 @@ services:
     ports:
       - "5000:5000"  # If using HTTP transport
     volumes:
-      - ./workspace:/workspace
+      - ${FOLDER}:/workspace
       - cipher_data:/app/.cipher
     environment:
       - OLLAMA_BASE_URL=http://ollama:11434/v1
