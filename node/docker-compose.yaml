@@ -29,3 +29,7 @@ services:
     #ports:
       #- "3000:3000"
       #- "5555:5555"
+
+include:
+  - path: ../agent_toolkit/docker-compose.yml
+    env_file: .env

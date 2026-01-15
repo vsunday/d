@@ -12,11 +12,11 @@ services:
       - serena_data:/root/.serena
       - ./project.yml:/root/.serena/project.yml
     environment:
-      - SERENA_CONTEXT=ide-assistant
+      - SERENA_CONTEXT=ide
     working_dir: /workspace
     stdin_open: true
     tty: true
-    command: ["serena", "start-mcp-server", "--context", "ide-assistant", "--project", "/workspace"]
+    command: ["serena", "start-mcp-server", "--context", "ide", "--project", "/workspace"]
 
 volumes:
   serena_data:
