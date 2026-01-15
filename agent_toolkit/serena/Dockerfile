@@ -1,8 +1,8 @@
 FROM python:3.12-slim
 
-# Install uv
+# Install uv, git, and Node.js
 RUN pip install --no-cache-dir uv && apt-get update &&\
-  apt-get install -y git && apt-get purge -y --auto-remove && rm -rf /var/lib/apt/lists/*
+  apt-get install -y git nodejs npm && apt-get purge -y --auto-remove && rm -rf /var/lib/apt/lists/*
 
 # Create workspace directory
 WORKDIR /workspace
