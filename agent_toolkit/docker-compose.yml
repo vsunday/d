@@ -2,4 +2,3 @@ include:
   - ./cipher/docker-compose.yml
   - ./context7/docker-compose.yml
   - path: ./serena/docker-compose.yml
-    env_file: .env

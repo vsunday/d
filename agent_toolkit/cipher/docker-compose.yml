@@ -17,9 +17,6 @@ services:
 
   cipher:
     image: cipher-cipher:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: cipher-mcp
     ports:
       - "5000:5000"  # If using HTTP transport

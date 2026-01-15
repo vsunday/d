@@ -1,9 +1,6 @@
 services:
   serena-mcp:
     image: serena-mcp:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: serena-mcp
     # ports:
     #   - "8000:8000"  # Web dashboard
