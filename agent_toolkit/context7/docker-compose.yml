@@ -1,9 +1,6 @@
 services:
   context7-mcp:
     image: context7-mcp:latest
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: context7-mcp
     stdin_open: true
     command: context7-mcp
