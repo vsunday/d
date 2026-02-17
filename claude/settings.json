@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": ["mcp__context7__query-docs"]
+  },
+  "extraKnownMarketplaces": {
+    "everything-claude-code": {
+      "source": {
+        "source": "github",
+        "repo": "affaan-m/everything-claude-code"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "everything-claude-code@everything-claude-code": true,
+    "mgrep@Mixedbread-Grep": true
+  }
+}

@@ -23,6 +23,14 @@ services:
       - type: bind
         source: ./volume/.claude
         target: /root/.claude
+      - type: bind
+        source: ../claude/CLAUDE.md
+        target: /root/.claude/CLAUDE.md
+        read_only: true
+      - type: bind
+        source: ../claude/settings.json
+        target: /root/.claude/settings.json
+        read_only: true
       - /var/run/docker.sock:/var/run/docker.sock
     tty: true
     entrypoint: /bin/bash

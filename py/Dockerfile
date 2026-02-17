@@ -2,7 +2,8 @@ FROM python:3.14-slim
 
 # basic setup
 RUN apt-get update -y &&\
- apt-get install -y git tmux vim curl &&\
+ apt-get install -y --no-install-recommends git tmux vim curl nodejs npm &&\
+  apt-get clean && \
   rm -rf /var/lib/apt/lists/* &&\
   echo 'set number tabstop=4 shiftwidth=4 expandtab' >> /root/.vimrc &&\
   echo 'alias ls="ls --color=auto"' >> /root/.bashrc &&\

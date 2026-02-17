@@ -21,6 +21,7 @@
 - プロジェクト全体で一貫したコーディングスタイルを維持
 - 小さな問題も放置せず、発見次第修正（Broken Windows理論）
 - コメントは「なぜ」を説明し、「何を」はコードで表現
+- Always use Context7 MCP when I need library/API documentation, code generation, setup or configuration steps without me having to explicitly ask.
 
 ## テスト規律
 - テストをスキップせず、問題があれば修正する
@@ -56,6 +57,7 @@
 - サーキットブレーカーパターンの活用
 - 一時的な障害に対する耐性を持たせる
 - 適切なログとメトリクスで可観測性を確保
+- "Production ready" means that all business requirements are fully implemented, codes works as expected, fully tested, runtime errors are properly caught and logged for later improvement. You can say "production ready" where all requirements are satisfied
 
 ## プロジェクトコンテキストの理解
 - ビジネス要件と技術要件のバランスを取る
