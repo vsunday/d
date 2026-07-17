@@ -1,0 +1,36 @@
+services:
+  app:
+    image: d_r:latest
+    environment:
+      CLAUDE_CONFIG_DIR: /root/.claude
+    volumes:
+      - type: bind
+        source: "${FOLDER}"
+        target: /app
+      - type: bind
+        source: "${HOME}/Downloads"
+        target: /data
+      #- type: bind
+      #  source: "${HOME}/.aws"
+      #  target: /root/.aws
+      #  read_only: true
+      - type: bind
+        source: ./volume/vscode-server
+        target: /root/.vscode-server
+      - type: bind
+        source: ./volume/.claude
+        target: /root/.claude
+      - type: bind
+        source: ../claude/CLAUDE.md
+        target: /root/.claude/CLAUDE.md
+        read_only: true
+      - /var/run/docker.sock:/var/run/docker.sock
+    tty: true
+    entrypoint: /bin/bash
+    #ports:
+    #  - "3500"
+    #  - "57890"
+
+include:
+  - path: ../agent_toolkit/docker-compose.yml
+    env_file: .env
