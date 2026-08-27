@@ -13,5 +13,7 @@ RUN apt-get update -y &&\
   pnpm config set store-dir /home/node/.local/share/pnpm/store &&\
   SHELL=bash pnpm setup && . /root/.bashrc # && pnpm i -g vercel
 COPY --from=docker:cli /usr/local/bin/docker /usr/local/bin/docker
+RUN curl -fsSL https://claude.ai/install.sh | bash &&\
+  echo 'export PATH="$HOME/.local/bin:$PATH"' >> /root/.bashrc
 
 ENTRYPOINT ["/bin/bash"]
