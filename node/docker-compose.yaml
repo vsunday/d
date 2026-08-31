@@ -1,6 +1,8 @@
 services:
   app:
-    image: d_n:24
+    # image: d_n:24
+    # image: d_n:24_claude
+    image: d_n:24_codex
     environment:
       NODE_PATH: "/tmp/node_modules"
       SAM_CLI_TELEMETRY: 0
@@ -23,6 +25,12 @@ services:
       - type: bind
         source: ./volume/.claude
         target: /root/.claude
+      - type: bind
+        source: ./volume/.codex/auth.json
+        target: /root/.codex/auth.json
+      - type: bind
+        source: ./volume/.codex/config.toml
+        target: /root/.codex/config.toml
       - type: bind
         source: ../claude/CLAUDE.md
         target: /root/.claude/CLAUDE.md
