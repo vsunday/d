@@ -15,7 +15,7 @@ RUN apt-get update -y &&\
   . /root/.bashrc # && pnpm i -g vercel
 
 COPY --from=docker:cli /usr/local/bin/docker /usr/local/bin/docker
-RUN curl -fsSL https://chatgpt.com/codex/install.sh | sh 
+RUN curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh 
 ENV PATH="/root/.local/bin:${PATH}"
 
 ENTRYPOINT ["/bin/bash"]
